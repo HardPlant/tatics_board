@@ -11,7 +11,10 @@ Given('주어진 전투맵ID {string}으로 게임판을 생성한다.', functio
 
     gameBoard = new GameBoard(battleId);
 
-    assert(typeof(gameBoard) === "object");
+    console.log(gameBoard);
+
+    assert.deepEqual(typeof(gameBoard), "object");
+    assert.equal(gameBoard.currentTurn, 0);
   });
 
 When('게임 로드 함수가 호출되면', function () {

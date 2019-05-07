@@ -1,6 +1,9 @@
-var GameBoard = function(){};
-var MapInfo = function(){};
-var MapNode = function(){};
+var GameBoard = {};
+GameBoard.prototype = {};
+
+var MapInfo = {};
+MapInfo.prototype = {};
+var MapNode = {};
 
 GameBoard.prototype.constructor = function(battleId) {
     this.currentTurn = 0;
@@ -8,14 +11,14 @@ GameBoard.prototype.constructor = function(battleId) {
     this.characters = [];
 };
 
-GameBoard.prototype.isGameEnded = function() {
+GameBoard.isGameEnded = function() {
     return false;
 }
 
 
-MapNode.prototype = {};
+MapNode = {};
 
-MapNode.prototype.loadFromJson = function() {
+MapNode.loadFromJson = function() {
     this[0] = {
         height: 0,
         traversable: false
@@ -28,21 +31,21 @@ MapNode.prototype.constructor = function(id, height) {
     this.traversable = MapNode.isTraversable(id);
 };
 
-MapNode.prototype.getHeight = function(id) {
-    return MapNode.prototype[id].height;
+MapNode.getHeight = function(id) {
+    return MapNode[id].height;
 };
 
-MapNode.prototype.isTraversable = function(id) {
-    return MapNode.prototype[id].traversable;
+MapNode.isTraversable = function(id) {
+    return MapNode[id].traversable;
 };
 
 
-MapInfo.prototype.constructor = function(battleId) {
+MapInfo.constructor = function(battleId) {
     this.battleId = battleId;
     this.mapInfo = loadMap(battleId);
 };
 
-MapInfo.prototype.loadMap = function(battleId) {
+MapInfo.loadMap = function(battleId) {
     var currentHeight = -2;
     var mapInfo = this;
 
