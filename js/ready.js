@@ -1,20 +1,16 @@
 var GameBoard = {};
-GameBoard.prototype = {};
-
 var MapInfo = {};
-MapInfo.prototype = {};
 var MapNode = {};
 
-GameBoard.prototype.constructor = function(battleId) {
+GameBoard = function(battleId) {
     this.currentTurn = 0;
-    this.mapInfo = new MapInfo(battleId);
+    this.mapInfo = MapInfo(battleId);
     this.characters = [];
 };
 
 GameBoard.isGameEnded = function() {
     return false;
 }
-
 
 MapNode = {};
 
