@@ -1,6 +1,6 @@
-var GameBoard = {};
-var MapInfo = {};
-var MapNode = {};
+var GameBoard = function(){};
+var MapInfo = function(){};
+var MapNode = function(){};
 
 GameBoard.prototype.constructor = function(battleId) {
     this.currentTurn = 0;
